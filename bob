@@ -1,15 +1,3 @@
---[[
-
-Rayfield Interface Suite
-by Sirius
-
-shlex | Designing + Programming
-iRay  | Programming
-
-]]
-
-
-
 local Release = "Beta 7R"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Rayfield"
@@ -2366,3 +2354,30 @@ task.delay(5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
 
 return RayfieldLibrary
 
+local Window = Rayfield:CreateWindow({
+   Name = "Script Hub",
+   LoadingTitle = "Monkey",
+   LoadingSubtitle = "By Monte ",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "enter key or no script :)",
+      Subtitle = "kii system",
+      Note = "To know they key, find the shortest person in the friend group and enter their name as the key (no uppercase letters)",
+      FileName = "SiriusKey",
+      SaveKey = true,
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = "arsen"
+   }
+})
+
+local Label = Tab:CreateLabel("Monte Hub")
